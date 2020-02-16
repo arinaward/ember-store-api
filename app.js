@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const dotenv = require('dotenv').config();
 const mongoose = require("mongoose");
 
 const productRoutes = require("./api/routes/products");
@@ -8,7 +9,7 @@ const orderRoutes = require("./api/routes/orders");
 
 // Connection to MongoDB Database
 
-mongoose.connect(
+mongoose.connect( process.env.MONGODB_URI ||
   "mongodb+srv://arishilyaeva:" +
     process.env.MONGO_DB_PW +
     "@scluster-ftsg2.mongodb.net/test?retryWrites=true&w=majority",
