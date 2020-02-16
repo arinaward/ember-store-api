@@ -9,10 +9,14 @@ const orderRoutes = require("./api/routes/orders");
 
 // Connection to MongoDB Database
 
-mongoose.connect( process.env.MONGODB_URI ||
-  "mongodb+srv://arishilyaeva:" +
-    process.env.MONGO_DB_PW +
-    "@scluster-ftsg2.mongodb.net/test?retryWrites=true&w=majority",
+
+
+const mongodb_uri = process.env.MONGODB_URI || "mongodb+srv://arishilyaeva:" + process.env.MONGO_DB_PW + "@scluster-ftsg2.mongodb.net/test?retryWrites=true&w=majority"
+
+console.log('mongodb_uri', mongodb_uri);
+
+
+mongoose.connect(mongodb_uri,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true
