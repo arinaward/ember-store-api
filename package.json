@@ -2,11 +2,10 @@
   "name": "store-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ember-store && npm run build"
+    "start": "nodemon server.js"
   },
   "author": "Arina Shilyaeva",
   "license": "ISC",
